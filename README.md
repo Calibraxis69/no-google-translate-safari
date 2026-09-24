@@ -1,0 +1,1 @@
+# no-google-translate-safari
