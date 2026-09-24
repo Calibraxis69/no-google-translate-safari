@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "No Google Search Translation",
+  "version": "1.0.0",
+  "description": "Evita las traducciones automáticas en los resultados de búsqueda de Google.",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://*.google.com/*",
+    "https://*.google.es/*",
+    "https://*.translate.goog/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.google.com/search*",
+        "https://*.google.es/search*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}

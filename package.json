@@ -1,0 +1,13 @@
+{
+  "name": "no-google-translate-safari",
+  "version": "1.0.0",
+  "description": "Safari Web Extension to stop Google Search auto-translations",
+  "scripts": {
+    "setup:safari": "xcrun safari-web-extension-converter ./src --project-location ./safari-app --app-name 'No Google Search Translation' --force",
+    "build": "xcodebuild -project './safari-app/No Google Search Translation/No Google Search Translation.xcodeproj' -scheme 'No Google Search Translation (macOS)' -configuration Debug build",
+    "clean": "rm -rf ./safari-app"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.260"
+  }
+}
